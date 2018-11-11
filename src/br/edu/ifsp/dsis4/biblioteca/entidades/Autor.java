@@ -1,9 +1,17 @@
 package br.edu.ifsp.dsis4.biblioteca.entidades;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "autor")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Autor {
 
     private int id;
 
+    @XmlElement(name = "nome")
     private String nome;
 
     public Autor() {
