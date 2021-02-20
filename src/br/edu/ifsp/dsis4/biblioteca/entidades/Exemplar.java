@@ -9,31 +9,49 @@ package br.edu.ifsp.dsis4.biblioteca.entidades;
 public class Exemplar {
 
     private int id;
+    
+    private int idObra;
 
-    private Obra obra;
+    private boolean disponivel;
 
     public Exemplar() {
-
     }
 
-    public Exemplar (final int id, final Obra obra) {
+    public Exemplar(int id, int idObra, boolean disponivel) {
         this.id = id;
-        this.obra = obra;
+        this.idObra = idObra;
+        this.disponivel = disponivel;
     }
 
-    public int getId () {
+    public int getId() {
         return id;
     }
 
-    public void setId (final int id) {
+    public void setId(int id) {
         this.id = id;
     }
-
-    public Obra getObra () {
-        return obra;
+    
+    public int getIdObra() {
+        return idObra;
+    }
+    
+    public void setIdObra(int idObra) {
+        this.idObra = idObra;
     }
 
-    public void setObra (final Obra obra) {
-        this.obra = obra;
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Exemplar: %d-%d | Status: %s", 
+                idObra,
+                id,
+                isDisponivel()? "disponível" : "emprestado");
     }
 }
